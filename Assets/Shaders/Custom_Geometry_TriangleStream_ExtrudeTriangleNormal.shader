@@ -3,7 +3,9 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-		_ExtrudeValue ("Extrude Value", Float) = 0
+		_BottomColor ("Bottom Color", Color) = (0, 0, 0, 1)
+        _TopColor ("Top Color", Color) = (1, 1, 1, 1)
+        _ExtrudeValue ("Extrude Value", Float) = 0
     }
     SubShader
     {
@@ -42,7 +44,9 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-			float _ExtrudeValue;
+			float4 _BottomColor;
+            float4 _TopColor;
+            float _ExtrudeValue;
 
             v2g vert (a2v v)
             {
@@ -66,20 +70,20 @@
 					o.vertex = input[i].vertex;
 					o.vertex = UnityObjectToClipPos(o.vertex);
 					o.uv = input[i].uv;
-					o.color = float4(0, 0, 0, 1);
+					o.color = _BottomColor;
 					outStream.Append(o);
 
 					o.vertex = input[i].vertex;
 					o.vertex.xyz += normal * _ExtrudeValue;
 					o.vertex = UnityObjectToClipPos(o.vertex);
 					o.uv = input[i].uv;
-					o.color = float4(1, 1, 1, 1);
+					o.color = _TopColor;
 					outStream.Append(o);
 
 					o.vertex = input[(i + 1) % 3].vertex;
 					o.vertex = UnityObjectToClipPos(o.vertex);
 					o.uv = input[(i + 1) % 3].uv;
-					o.color = float4(0, 0, 0, 1);
+					o.color = _BottomColor;
 					outStream.Append(o);
 
 					outStream.RestartStrip();
@@ -88,20 +92,20 @@
 					o.vertex.xyz += normal * _ExtrudeValue;
 					o.vertex = UnityObjectToClipPos(o.vertex);
 					o.uv = input[i].uv;
-					o.color = float4(1, 1, 1, 1);
+					o.color = _TopColor;
 					outStream.Append(o);
 
 					o.vertex = input[(i + 1) % 3].vertex;
 					o.vertex = UnityObjectToClipPos(o.vertex);
 					o.uv = input[(i + 1) % 3].uv;
-					o.color = float4(0, 0, 0, 1);
+					o.color = _BottomColor;
 					outStream.Append(o);
 
 					o.vertex = input[(i + 1) % 3].vertex;
 					o.vertex.xyz += normal * _ExtrudeValue;
 					o.vertex = UnityObjectToClipPos(o.vertex);
 					o.uv = input[(i + 1) % 3].uv;
-					o.color = float4(1, 1, 1, 1);
+					o.color = _TopColor;
 					outStream.Append(o);
 
 					outStream.RestartStrip();
@@ -113,7 +117,7 @@
 					o.vertex.xyz += normal * _ExtrudeValue;
 					o.vertex = UnityObjectToClipPos(o.vertex);
 					o.uv = input[i].uv;
-					o.color = float4(1, 1, 1, 1);
+					o.color = _TopColor;
 					outStream.Append(o);
                 }
 

@@ -86,7 +86,7 @@
                     topUV = (input[0].uv + input[1].uv) / 2;
                 }
                 
-                float3 normal = ConstructNormal(input[0], input[1], input[2])
+                float3 normal = ConstructNormal(input[0].vertex, input[1].vertex, input[2].vertex);
                 topVertex.xyz += normal * _ExtrudeValue;
                 
                 g2f o;
