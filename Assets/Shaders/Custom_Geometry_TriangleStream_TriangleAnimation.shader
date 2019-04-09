@@ -3,6 +3,8 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+		_BottomColor ("Bottom Color", Color) = (1, 1, 1, 1)
+        _TopColor ("Top Color", Color) = (0, 0, 0, 1)
         _Threshold ("Threshold", Float) = 0
 		_V0 ("V0", Float) = 0
 		_A ("A", Float) = 0
@@ -38,10 +40,13 @@
             {
                 float4 vertex : SV_POSITION;
                 float2 uv : TEXCOORD0;
+				float4 color : COLOR;
             };
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+			float4 _BottomColor;
+            float4 _TopColor;
             float _Threshold;
 			float _V0;
 			float _A;
@@ -81,6 +86,7 @@
 						o.vertex.y += v;
 						o.vertex = UnityObjectToClipPos(o.vertex);
 						o.uv = input[i].uv;
+						o.color = lerp(_BottomColor, _TopColor, t * _SizeVelocity);
 						outStream.Append(o);
 					}
 					else
@@ -88,6 +94,7 @@
 						o.vertex = input[i].vertex;
 						o.vertex = UnityObjectToClipPos(o.vertex);
 						o.uv = input[i].uv;
+						o.color = _BottomColor;
 						outStream.Append(o);
 					}
 				}
@@ -97,7 +104,7 @@
 
             fixed4 frag (g2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = tex2D(_MainTex, i.uv) * i.color;
                 return col;
             }
             ENDCG
