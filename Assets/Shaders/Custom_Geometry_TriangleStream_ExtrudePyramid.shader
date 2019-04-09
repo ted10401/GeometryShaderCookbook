@@ -14,6 +14,8 @@
 
         Pass
         {
+			Cull Off
+
             CGPROGRAM
             #pragma vertex vert
             #pragma geometry geom
@@ -25,15 +27,13 @@
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
-                float3 normal : NORMAL;
             };
             
             struct v2g
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
-                float3 normal : NORMAL;
-            }
+            };
 
             struct g2f
             {
@@ -48,9 +48,9 @@
             float4 _TopColor;
             float _ExtrudeValue;
 
-            v2f vert (appdata v)
+            v2g vert (a2v v)
             {
-                v2f o;
+                v2g o;
                 o.vertex = v.vertex;
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
@@ -64,27 +64,8 @@
             [maxvertexcount(9)]
             void geom(triangle v2g input[3], inout TriangleStream<g2f> outStream)
             {
-                float edge0 = distance(input[0].vertex, input[1].vertex);
-                float edge1 = distance(input[1].vertex, input[2].vertex);
-                float edge2 = distance(input[0].vertex, input[2].vertex);
-                
-                float longestEdge = edge0;
-                float4 topVertex = (input[0].vertex + input[1].vertex) / 2;
-                float2 topUV = (input[0].uv + input[1].uv) / 2;
-                
-                if(edge1 > longestEdge)
-                {
-                    longestEdge = edge1;
-                    topVertex = (input[1].vertex + input[2].vertex) / 2;
-                    topUV = (input[1].uv + input[2].uv) / 2;
-                }
-                
-                if(edge2 > longestEdge)
-                {
-                    longestEdge = edge2;
-                    topVertex = (input[0].vertex + input[1].vertex) / 2;
-                    topUV = (input[0].uv + input[1].uv) / 2;
-                }
+				float4 topVertex = (input[0].vertex + input[1].vertex + input[2].vertex) / 3;
+				float2 topUV = (input[0].uv + input[1].uv + input[2].uv) / 3;
                 
                 float3 normal = ConstructNormal(input[0].vertex, input[1].vertex, input[2].vertex);
                 topVertex.xyz += normal * _ExtrudeValue;
