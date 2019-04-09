@@ -53,6 +53,8 @@ The repository is the practice project of Geometry shader in Unity engine.
 ## Practice Examples
 PointStream/Vertex
 <p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_PointStream_Vertex.jpg"></p>
+LineStream/Line
+<p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_LineStream_Line.jpg"></p>
 TriangleStream/DoNothing
 <p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_TriangleStream_DoNothing.jpg"></p>
 TriangleStream/ExtrudeVertex
