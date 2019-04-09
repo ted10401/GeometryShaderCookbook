@@ -2,7 +2,7 @@
 The repository is the practice project of Geometry shader in Unity engine.
 
 ## Define the Method of Geometry Shader
-#pragma geometry geom
+    #pragma geometry geom
 
 ## Define Data Structure
     //a2v: The data structure from the application to the vertex shader.
@@ -42,11 +42,13 @@ The repository is the practice project of Geometry shader in Unity engine.
             outStream.RestartStrip();  
       }
 
-maxvertexcount: The output vertex count for the geometry shader.
-triangle v2g input[3]: The input data structure. There are several input types, such as point, line, triagnle, lineadj, and triangleadj.
-inout TriangleStream<g2f> outStream: The output data structure. There are several output types, such as TriangleStream, and PointStream.
-  outStream.Append(): The method to add the vertex data.
-  outStream.RestartStrip(): The method to form the triangle data. (Three vertices form a triangle)
+|                                    |                                                                                                                    |
+|-------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| maxvertexcount(number)              | The output vertex number for the geometry shader.                                                                   |
+| triangle v2g input[3]               | The input data structure. There are several input types, such as point, line, triagnle, lineadj, and triangleadj.   |
+| inout TriangleStream<g2f> outStream | The output data structure. There are several output types, such as LineStream, PointStream, and TriangleStream.     |
+| outStream.Append()                  | The method to add the vertex data.                                                                                  |
+| outStream.RestartStrip()            | If the output is TriangleStream, you need to call the method to form the triangle. (Three vertices form a triangle) |
   
 ## Practice Examples
 PointStream/Vertex
