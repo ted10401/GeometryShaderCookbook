@@ -73,6 +73,8 @@
                 g2f o;
                 for(int i = 0; i < 3; i++)
                 {
+					int index = (i + 1) % 3;
+
                     o.vertex = input[i].vertex;
                     o.vertex = UnityObjectToClipPos(o.vertex);
                     o.uv = input[i].uv;
@@ -84,9 +86,9 @@
                     o.color = _TopColor;
                     outStream.Append(o);
                     
-                    o.vertex = input[(i + 1) % 3].vertex;
+                    o.vertex = input[index].vertex;
                     o.vertex = UnityObjectToClipPos(o.vertex);
-                    o.uv = input[(i + 1) % 3].uv;
+                    o.uv = input[index].uv;
                     o.color = _BottomColor;
                     outStream.Append(o);
                     
