@@ -61,17 +61,14 @@ TriangleStream/ExtrudeVertex
 <p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_TriangleStream_ExtrudeVertex.jpg"></p>
 TriangleStream/TriangleAnimation
 <p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_TriangleStream_TriangleAnimation.jpg"></p>
-TriangleStream/TriangleAnimation
 <p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_TriangleStream_TriangleAnimation.gif"></p>
 TriangleStream/ExtrudePyramid
 <p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_TriangleStream_ExtrudePyramid.jpg"></p>
 TriangleStream/ExtrudePyramidAnimation
 <p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_TriangleStream_ExtrudePyramidAnimation.jpg"></p>
-TriangleStream/ExtrudePyramidAnimation
 <p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_TriangleStream_ExtrudePyramidAnimation.gif"></p>
 TriangleStream/ExtrudeTriangle
 <p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_TriangleStream_ExtrudeTriangle.jpg"></p>
 TriangleStream/ExtrudeTriangleAnimation
 <p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_TriangleStream_ExtrudeTriangleAnimation.jpg"></p>
-TriangleStream/ExtrudeTriangleAnimation
 <p align="center"><img style="margin:auto;" src="https://github.com/ted10401/GeometryShaderPractice/blob/master/GithubResources/Custom_Geometry_TriangleStream_ExtrudeTriangleAnimation.gif"></p>
