@@ -42,13 +42,28 @@ The repository is the practice project of Geometry shader in Unity engine.
             outStream.RestartStrip();  
       }
 
-|                                    |                                                                                                                    |
-|-------------------------------------|---------------------------------------------------------------------------------------------------------------------|
-| maxvertexcount(number)              | The output vertex number for the geometry shader.                                                                   |
-| triangle v2g input[3]               | The input data structure. There are several input types, such as point, line, triagnle, lineadj, and triangleadj.   |
-| inout TriangleStream<g2f> outStream | The output data structure. There are several output types, such as LineStream, PointStream, and TriangleStream.     |
-| outStream.Append()                  | The method to add the vertex data.                                                                                  |
-| outStream.RestartStrip()            | If the output is TriangleStream, you need to call the method to form the triangle. (Three vertices form a triangle) |
+| Attribute              |                                                   |
+|------------------------|---------------------------------------------------|
+| maxvertexcount(number) | The output vertex number for the geometry shader. |
+
+| Inputs      |                                                          |
+|-------------|----------------------------------------------------------|
+| point       | The point data.                                          |
+| line        | The line data.                                           |
+| lineadj     | The line data, including the adjacent line data.         |
+| triangle    | The triangle data.                                       |
+| triangleadj | The triangle data, including the adjacent triangle data. |
+
+| Outputs                |                           |
+|------------------------|---------------------------|
+| PointStream<struct>    | The point stream data.    |
+| LineStream<struct>     | The line stream data.     |
+| TriangleStream<struct> | The triangle stream data. |
+    
+| Stream Methods |                                                                                                                     |
+|----------------|---------------------------------------------------------------------------------------------------------------------|
+| Append(struct) | The method to add the data.                                                                                         |
+| RestartStrip() | If the output is TriangleStream, you need to call the method to form the triangle. (Three vertices form a triangle) |
   
 ## Practice Examples
 PointStream/Vertex
