@@ -26,7 +26,7 @@ Material:
     m_Floats:
     - _A: 0.1
     - _SizeVelocity: 10
-    - _Threshold: 0
+    - _Threshold: -11.48
     - _V0: 0.1
     m_Colors:
     - _BottomColor: {r: 1, g: 1, b: 1, a: 1}
