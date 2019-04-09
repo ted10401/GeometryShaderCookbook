@@ -1,4 +1,4 @@
-﻿Shader "Custom/Geometry/TriangleStream/ExtrudeVertexNormal"
+﻿Shader "Custom/Geometry/TriangleStream/ExtrudeVertex"
 {
     Properties
     {

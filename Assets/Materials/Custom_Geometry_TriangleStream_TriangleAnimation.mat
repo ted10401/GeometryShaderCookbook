@@ -28,4 +28,6 @@ Material:
     - _SizeVelocity: 10
     - _Threshold: 0
     - _V0: 0.1
-    m_Colors: []
+    m_Colors:
+    - _BottomColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TopColor: {r: 0, g: 0, b: 0, a: 1}
